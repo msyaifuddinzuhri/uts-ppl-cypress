@@ -23,5 +23,16 @@ describe('TC_DETAIL - 1941720013 - Mochammad Syaifuddin Zuhri', () => {
         cy.contains('[class="btn btn_secondary back btn_large inventory_details_back_button"]', 'Back to products').should('be.visible')
     })
 
+    // Test Scenario 2
+    it('2. Handle click the photo product box', () => {
+
+        // Get First Photo Product Box to the example
+        const photoProductBox = cy.get('.inventory_item_img').first()
+        photoProductBox.click();
+
+        // Assertion then product box click is redirect to detail product page
+        cy.contains('[class="btn btn_secondary back btn_large inventory_details_back_button"]', 'Back to products').should('be.visible')
+    })
+
 
 })
