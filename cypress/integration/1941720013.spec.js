@@ -49,5 +49,18 @@ describe('TC_DETAIL - 1941720013 - Mochammad Syaifuddin Zuhri', () => {
         cy.get('[class="inventory_details_img_container"]').find('.inventory_details_img').should('be.visible')
     })
     
+    // Test Scenario 5
+    it('4. Handle click back button from product detail page to list product', () => {
+
+        // Get First Photo Product Box to the example
+        const photoProductBox = cy.get('.inventory_item_img').first()
+        photoProductBox.click();
+        
+        // Get back button
+        const backButton = cy.get('[class="btn btn_secondary back btn_large inventory_details_back_button"]').click();
+        
+        // Assertion then product box click is redirect to detail product page
+        cy.get('[class="header_secondary_container"]').find('.title').should('be.visible')
+    })
 
 })
