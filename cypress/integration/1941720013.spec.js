@@ -34,5 +34,20 @@ describe('TC_DETAIL - 1941720013 - Mochammad Syaifuddin Zuhri', () => {
         cy.contains('[class="btn btn_secondary back btn_large inventory_details_back_button"]', 'Back to products').should('be.visible')
     })
 
+    // Test Scenario 3
+    it('3. Display product detail data', () => {
+
+        // Get First Photo Product Box to the example
+        const photoProductBox = cy.get('.inventory_item_img').first()
+        photoProductBox.click();
+
+        // Assertion detail product data
+        cy.contains('[class="inventory_details_name large_size"]', 'Sauce Labs Backpack').should('be.visible')
+        cy.contains('[class="inventory_details_desc large_size"]', 'carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.').should('be.visible')
+        cy.contains('[class="inventory_details_price"]', '$29.99').should('be.visible')
+        cy.contains('[class="btn btn_primary btn_small btn_inventory"]', 'Add to cart').should('be.visible')
+        cy.get('[class="inventory_details_img_container"]').find('.inventory_details_img').should('be.visible')
+    })
+    
 
 })
